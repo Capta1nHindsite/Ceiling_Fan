@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Fan Control</title>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="https://code.jquery.com/jquery-2.2.2.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $('.button').click(function() {
+            $.post( "/control",
+            {
+                operation : this.id
+            } );
+            $(this).removeClass('ui-btn-active');
+        });
+    });
+    </script>
+	<style>
+	.ui-disabled, .ui-state-disabled, button[disabled], .ui-select .ui-btn.ui-state-disabled {
+		filter: Alpha(Opacity=100)!important;
+		opacity: 1!important;
+		cursor: default!important;
+		pointer-events: none!important;
+	}
+	</style>
+</head>
+<body>
+<div style="min-width:240px!important; max-width:100%!important;background-color:#22222A;" align="center" data-role="page" data-control-title="Home" id="page1">
+    <div align="center" data-role="content">
+        <input type="button" id="fan" class="button" data-role="header" data-theme="b" value="Fan" disabled="true">
+        <input type="button" id="3" class="button" data-role="button" data-inline="true" value="Low">
+        <input type="button" id="2" class="button" data-role="button" data-inline="true" value="Med">
+		<br>
+        <input type="button" id="1" class="button" data-role="button" data-inline="true" value="High">
+        <input type="button" id="5" class="button" data-role="button" data-inline="true" value="Off">
+		<br>
+        <input type="button" id="4" class="button" data-role="button" data-inline="true" value="Reverse">
+        <hr style="height:3px; background-color:#ccc; border:0; margin-top:12px; margin-bottom:12px;">
+        <input type="button" id="light" class="button" data-role="header" data-theme="b" value="Light" disabled="true">
+        <input type="button" id="6" class="button" data-role="button" data-inline="true" value="Toggle">
+        <input type="button" id="light_dimmer" class="button" data-role="button" data-inline="true" value="Dimmer">
+    </div>
+</div>
+</body>
+</html>

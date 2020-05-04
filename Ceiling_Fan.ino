@@ -16,8 +16,8 @@ const int REST { 11600 };
 
 const int ACTIVE_DIP [4] {1,1,1,1};
 
-const char* ssid = "TellMyWiFiLoveHer";
-const char* password = "fourwordsalluppercase";
+const char* ssid = "SSIDgoesHERE";
+const char* password = "PASSWORDgoesHERE";
 
 MDNSResponder mdns;
 ESP8266WebServer server ( 80 );
